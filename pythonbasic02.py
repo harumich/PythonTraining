@@ -60,9 +60,56 @@ print(tv)
 for i in range(1, 11):
     print(i)
 
+
 #whileループ
 x = 10 
 while x > 0:
     print('{}'.format(x))
     x -= 1
 print("Happy New Year!")
+
+#whileループ（無限ループ）
+while True:
+    print("Hello, world!")
+
+#break文
+for i in range(0, 100):
+    print(i)
+    break     #0
+
+#continue文(実行中の反復処理を途中で終了して、次なる反復処理を実行する)
+for i in range(1, 6):      #1
+    if i == 3:             #2
+        continue           #4
+    print(i)               #5
+
+
+#モジュール(モジュール名.｛変数　or 関数})
+import math 
+
+math.pow(2, 3)
+
+
+#他のモジュールにインポートする(動作確認用のテストコードが書かれている場合の防止方法)
+ #通常例（関数）
+def print_hello():     #module1.pyで　"  "
+    print("Hello!")
+
+import hello
+hello.print_hello()    #module2.pyで　Hello!
+ 
+ #ダメ例
+print("Hello!") #module1.pyで　Hello!
+
+import module1  #module2.pyで Hello!(やりたくもないのに)
+
+ #良い例(動作確認用のテストコードが書かれている場合の防止方法)
+if __name__ == "__main__":    #module1.pyで　Hello!　
+    print("Hello!")
+
+import module1     #module2.pyで　" "
+
+
+
+
+
